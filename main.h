@@ -1,12 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include "stdarg.h"
-
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct type_function
 {
-	char type;
+	char type_cifs;
 	void (*function_print)(va_list arguments);
 } type_function;
 
