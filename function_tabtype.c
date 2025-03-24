@@ -1,6 +1,4 @@
 #include "main.h"
-#include "stdarg.h"
-#include "stdio.h"
 
 void (*function_tabtype(char *s))(int)
 {
@@ -8,4 +6,12 @@ void (*function_tabtype(char *s))(int)
 		{'c', print_char},
 		{'s', print_string}
 	};
+
+	int i = 0;
+
+	while (type[i].type_cifs != NULL && strcmp(s, type[i].type_cifs) != 0)
+	{
+		i++;
+	}
+	return (type[i].function_print);
 }
