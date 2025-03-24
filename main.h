@@ -11,5 +11,9 @@ typedef struct type_function
 } type_function;
 
 int _putchar(char c);
+void print_char(va_list arguments);
+void print_string(va_list arguments);
+
+void (*function_tabtype(char *s))(int);
 
 #endif /* MAIN_H */
