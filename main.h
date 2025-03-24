@@ -3,6 +3,7 @@
 
 #include "stdarg.h"
 
+
 typedef struct type_function
 {
 	char type;
