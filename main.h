@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct type_function
 {
@@ -14,7 +15,6 @@ typedef struct type_function
 int _putchar(char c);
 void print_char(va_list arguments);
 void print_string(va_list arguments);
-
-void (*function_tabtype(char *s))(int);
+int _printf(const char * const format, ...);
 
 #endif /* MAIN_H */
