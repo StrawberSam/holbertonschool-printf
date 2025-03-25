@@ -4,7 +4,8 @@ void (*function_tabtype(char *s))(int)
 {
 	type_function type[] = {
 		{'c', print_char},
-		{'s', print_string}
+		{'s', print_string},
+		{NULL, NULL}
 	};
 
 	int i = 0;
