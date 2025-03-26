@@ -34,6 +34,11 @@ int print_string(va_list arguments)
 	return (counter);
 }
 
+/**
+ *print_percent - fonction qui print %
+ *@arguments:Liste variadique
+ *Return: 1 pour le compteur
+ */
 int print_percent(va_list arguments)
 {
 	(void)arguments;
