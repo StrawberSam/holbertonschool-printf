@@ -2,7 +2,7 @@
 /**
  * _printf - Fonction qui copie la fonction printf
  *@format: tableau de specifiers
-* Return: 0 = ok; -1 = faux
+* Return: total nombre de charactère de la fonction -ptintf
 */
 int _printf(const char *format, ...)
 {
@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 
-	if (!format || format[i + 1] == '\0')
+	if (!format)
 		return (-1);
 
 	va_start(arguments, format);
@@ -26,6 +26,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+
+			if (format[i] == '\0')
+				return (-1);
 			j = 0;
 
 			while (type[j].type_cifs != '\0')
@@ -42,7 +45,7 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				_putchar(format[i]);
-				return (2);
+				total_char = total_char + 2;
 			}
 		}
 		else
