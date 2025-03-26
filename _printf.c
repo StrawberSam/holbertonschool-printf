@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - Fonction qui copie la fonction printf
  *@format: tableau de specifiers
@@ -13,26 +12,23 @@ int _printf(const char * const format, ...)
 	type_function type[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'%', print_percent},
 		{'\0', NULL}
 	};
 
 	va_start(arguments, format);
 
-	if (!format)
+	if (!format || format[i] == '\0')
 		return (-1);
 
 	while (format && format[i])
 	{
+		total_char = 0;
+
 		if (format[i] == '%')
 		{
-			i = i + 1;
-			if (format[i] == '\0')
-				break;
-
-			else if (format[i] == '%')
-			_putchar(37);
+			i++;
 			j = 0;
-			total_char++;
 
 			while (type[j].type_cifs != '\0')
 			{
@@ -42,13 +38,14 @@ int _printf(const char * const format, ...)
 					break;
 				}
 				j++;
-				total_char++;
 			}
 		}
-		else if (format[i] != '\0')
+		else
+		{
 			_putchar(format[i]);
+			total_char++;
+		}
 		i++;
-		total_char++;
 	}
 	va_end(arguments);
 	return (total_char);

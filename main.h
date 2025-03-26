@@ -23,5 +23,5 @@ int _putchar(char c);
 int print_char(va_list arguments);
 int print_string(va_list arguments);
 int _printf(const char *format, ...);
-
+int print_percent(va_list arguments);
 #endif /* MAIN_H */

@@ -33,3 +33,12 @@ int print_string(va_list arguments)
 	}
 	return (counter);
 }
+
+int print_percent(va_list arguments)
+{
+	(void)arguments;
+
+	if (_putchar('%') == -1)
+		return (-1);
+	return (1);
+}
