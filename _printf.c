@@ -8,14 +8,14 @@
 int _printf(const char * const format, ...)
 {
 	int i = 0, j;
+	va_list arguments;
+
 	type_function type[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'\0', NULL}
 	};
-
-	va_list arguments;
-
+	
 	va_start(arguments, format);
 
 	if (!format)
@@ -41,7 +41,7 @@ int _printf(const char * const format, ...)
 				j++;
 			}
 		}
-		else if (format[i] != '%')
+		else if (format[i] != '\0')
 			_putchar(format[i]);
 		i++;
 	}
