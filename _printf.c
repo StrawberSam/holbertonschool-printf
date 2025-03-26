@@ -1,29 +1,10 @@
 #include "main.h"
-
-int handler_spe(type_function *type, va_list arguments,
-	const char * const format)
-{
-
-int j = 0, i = 0, total_char = 0;
-
-	while (type[j].type_cifs != '\0')
-	{
-		if (format[i] == type[j].type_cifs)
-		{
-			total_char += type[j].function_print(arguments);
-			break;
-		}
-		j++;
-	}
-	return (total_char);
-}
-
 /**
  * _printf - Fonction qui copie la fonction printf
  *@format: tableau de specifiers
- * Return: 0 = ok; -1 = faux
- */
-int _printf(const char * const format, ...)
+* Return: 0 = ok; -1 = faux
+*/
+int _printf(const char *format, ...)
 {
 	int i = 0, j, total_char = 0;
 	va_list arguments;
@@ -35,16 +16,34 @@ int _printf(const char * const format, ...)
 		{'\0', NULL}
 	};
 
-	va_start(arguments, format);
-
 	if (!format)
 		return (-1);
+
+	va_start(arguments, format);
 
 	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
+			j = 0;
+
+			while (type[j].type_cifs != '\0')
+			{
+				if (format[i] == type[j].type_cifs)
+				{
+					total_char += type[j].function_print(arguments);
+					break;
+				}
+				j++;
+			}
+
+			if (type[j].type_cifs == '\0')
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				return (2);
+			}
 		}
 		else
 		{
