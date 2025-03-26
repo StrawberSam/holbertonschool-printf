@@ -18,13 +18,11 @@ int _printf(const char * const format, ...)
 
 	va_start(arguments, format);
 
-	if (!format || format[i] == '\0')
+	if (!format)
 		return (-1);
 
 	while (format && format[i])
 	{
-		total_char = 0;
-
 		if (format[i] == '%')
 		{
 			i++;
