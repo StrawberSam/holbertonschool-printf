@@ -7,7 +7,7 @@
  */
 int _printf(const char * const format, ...)
 {
-	int i = 0, j;
+	int i = 0, j, total_char = 0;
 	va_list arguments;
 
 	type_function type[] = {
@@ -28,23 +28,28 @@ int _printf(const char * const format, ...)
 			i = i + 1;
 			if (format[i] == '\0')
 				break;
+
 			else if (format[i] == '%')
 			_putchar(37);
 			j = 0;
-			while (j < 4)
+			total_char++;
+
+			while (type[j].type_cifs != '\0')
 			{
 				if (format[i] == type[j].type_cifs)
 				{
-					type[j].function_print(arguments);
+					total_char += type[j].function_print(arguments);
 					break;
 				}
 				j++;
+				total_char++;
 			}
 		}
 		else if (format[i] != '\0')
 			_putchar(format[i]);
 		i++;
+		total_char++;
 	}
 	va_end(arguments);
-	return (0);
+	return (total_char);
 }
