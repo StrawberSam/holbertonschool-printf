@@ -1,6 +1,9 @@
 #include "test_main.h"
-
-
+/**
+ *print_char - fonction qui print un char
+ *@arguments:Liste variadique
+ *Return: 1 pour le char
+ */
 
 int print_char(va_list arguments)
 {
@@ -10,7 +13,11 @@ int print_char(va_list arguments)
 		return (-1);
 	return (1);
 }
-
+/**
+ *print_string - fonction qui print une chaîne de caractère
+ *@arguments:Liste variadique
+ *Return: counter pour afficher la string charactère par charactère
+ */
 int print_string(va_list arguments)
 {
 	char *str = va_arg(arguments, char *);
