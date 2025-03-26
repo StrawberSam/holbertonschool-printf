@@ -1,27 +1,10 @@
 #include "test_main.h"
 
-int print_char(va_list arguments)
-{
-	char c = va_arg(arguments, int);
-	if (_putchar(c) == -1)
-		return (-1);
-	return (1);
-}
-int print_string(va_list arguments)
-{
-	char *str = va_arg(arguments, char *);
-	int i, counter = 0;
-	if (!str)
-		str = NULL;
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if(_putchar(str[i]) == -1)
-			return (-1);
-		counter++;
-	}
-	return (counter);
-}
-
+/**
+ * _printf - Fonction qui copie la fonction printf
+ *@format: tableau de specifiers
+ * Return: 0 = ok; -1 = faux
+ */
 int _printf(const char * const format, ...)
 {
 	int i = 0, j;
@@ -32,21 +15,23 @@ int _printf(const char * const format, ...)
 	};
 
 	va_list arguments;
+
 	va_start(arguments, format);
 
 	if (!format)
 		return (-1);
 
-	while (format[i])
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
-			i++;
+			i = i + 1;
 			if (format[i] == '\0')
 				break;
-
+			else if (format[i] == '%')
+			_putchar(37);
 			j = 0;
-			while (j < 2)
+			while (j < 4)
 			{
 				if (format[i] == type[j].type_cifs)
 				{
@@ -55,15 +40,11 @@ int _printf(const char * const format, ...)
 				}
 				j++;
 			}
-
 		}
 		else
-		{
 			_putchar(format[i]);
-		}
 		i++;
 	}
-
 	va_end(arguments);
 	return (0);
 }

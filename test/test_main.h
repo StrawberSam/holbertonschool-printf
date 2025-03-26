@@ -7,6 +7,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * _printf - Fonction qui copie la fonction printf
+ *@format: tableau de specifiers
+ * Return: 0 = ok; -1 = faux
+ */
+
 typedef struct type_function
 {
 	char type_cifs;
