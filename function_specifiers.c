@@ -24,7 +24,7 @@ int print_string(va_list arguments)
 	int i, counter = 0;
 
 	if (!str)
-		str = NULL;
+		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (_putchar(str[i]) == -1)
