@@ -1,7 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,8 +19,12 @@ typedef struct type_function
 } type_function;
 
 int _putchar(char c);
+int _printf(const char *format, ...);
+int find_specifier(const char *format, int i, va_list args, int *total_char);
+
 int print_char(va_list arguments);
 int print_string(va_list arguments);
-int _printf(const char *format, ...);
 int print_percent(va_list arguments);
+
+
 #endif /* MAIN_H */
