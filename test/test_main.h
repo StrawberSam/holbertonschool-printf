@@ -8,9 +8,10 @@
 #include <string.h>
 
 /**
- * _printf - Fonction qui copie la fonction printf
- *@format: tableau de specifiers
- * Return: 0 = ok; -1 = faux
+ * struct type_function - tableau de structure regroupant type et *fonction
+ *@type_cifs: type de specifier
+ *@function_print: pointeur de fonction sur la fonction correspondante au type
+ * Return:
  */
 
 typedef struct type_function
