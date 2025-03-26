@@ -15,7 +15,7 @@ int _printf(const char * const format, ...)
 		{'s', print_string},
 		{'\0', NULL}
 	};
-	
+
 	va_start(arguments, format);
 
 	if (!format)
