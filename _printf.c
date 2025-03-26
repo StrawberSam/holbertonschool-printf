@@ -41,7 +41,7 @@ int _printf(const char * const format, ...)
 				j++;
 			}
 		}
-		else
+		else if (format[i] != '%')
 			_putchar(format[i]);
 		i++;
 	}
