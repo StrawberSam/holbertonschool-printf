@@ -47,3 +47,23 @@ int print_percent(va_list arguments)
 		return (-1);
 	return (1);
 }
+
+/**
+ *print_int - fonction qui print un entier
+ *@arguments:Liste variadique
+ *Return: 1 pour le compteur
+ */
+
+int print_int(va_list arguments)
+{
+	int integer = va_arg(arguments, int);
+	int k, counter = 0;
+
+	for (k = 0; k != '\0'; k++)
+	{
+		if (_putchar('0' + integer) == -1)
+			return (-1);
+		counter++;
+	}
+	return (counter);
+}

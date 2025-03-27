@@ -16,6 +16,7 @@ int find_specifier(const char *format, int i, va_list arguments,
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
+		{'d', print_int},
 		{'\0', NULL}
 	};
 

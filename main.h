@@ -25,6 +25,7 @@ int find_specifier(const char *format, int i, va_list arguments, int *total_char
 int print_char(va_list arguments);
 int print_string(va_list arguments);
 int print_percent(va_list arguments);
+int print_int(va_list arguments);
 
 
 #endif /* MAIN_H */
