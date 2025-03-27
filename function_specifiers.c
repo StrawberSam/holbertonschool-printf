@@ -54,67 +54,65 @@ int print_percent(va_list arguments)
  *Return: Counter pour le compteur
  */
 
- int print_decimal(va_list arguments)
- {
-	 int integer = va_arg(arguments, int);
-	 int counter = 0;
-	 int tab_numbers[12];
-	 int index = 0;
-	 int i;
+int print_decimal(va_list arguments)
+{
+	int integer = va_arg(arguments, int);
+	int counter = 0;
+	int tab_numbers[12];
+	int index = 0;
+	int i;
 
+	if (integer < 0)
+	{
+		_putchar('-');
+		integer = -integer;
+		counter++;
+	}
 
-	 if (integer < 0)
-	 {
-		 _putchar('-');
-		 integer = -integer;
-		 counter++;
-	 }
+	while (integer > 0)
+	{
+		tab_numbers[index++] = integer % 10;
+		integer = integer / 10;
+	}
 
-	 while (integer > 0)
-	 {
-		 tab_numbers[index++] = integer % 10;
-		 integer = integer / 10;
-	 }
+	for (i = index - 1; i >= 0; i--)
+	{
+		(_putchar('0' + tab_numbers[i]));
+		counter++;
+	}
+	return (counter);
+}
 
-	 for (i = index - 1; i >= 0; i--)
-	 {
-		 (_putchar('0' + tab_numbers[i]));
-		 counter++;
-	 }
-	 return(counter);
- }
-
- /**
+/**
  *print_int - fonction qui print un entier
  *@arguments:Liste variadique
  *Return: Counter pour le compteur
  */
- int print_int(va_list arguments)
- {
-	 int integer = va_arg(arguments, int);
-	 int counter = 0;
-	 int tab_numbers[12];
-	 int index = 0;
-	 int i;
+int print_int(va_list arguments)
+{
+	int integer = va_arg(arguments, int);
+	int counter = 0;
+	int tab_numbers[12];
+	int index = 0;
+	int i;
 
+	if (integer < 0)
+	{
+		_putchar('-');
+		integer = -integer;
+		counter++;
+	}
 
-	 if (integer < 0)
-	 {
-		 _putchar('-');
-		 integer = -integer;
-		 counter++;
-	 }
+	while (integer > 0)
+	{
+		tab_numbers[index++] = integer % 10;
+		integer = integer / 10;
+	}
 
-	 while (integer > 0)
-	 {
-		 tab_numbers[index++] = integer % 10;
-		 integer = integer / 10;
-	 }
-
-	 for (i = index - 1; i >= 0; i--)
-	 {
-		 (_putchar('0' + tab_numbers[i]));
-		 counter++;
-	 }
-	 return(counter);
- }
+	for (i = index - 1; i >= 0; i--)
+	{
+		(_putchar('0' + tab_numbers[i]));
+		counter++;
+	}
+	return (counter);
+}
