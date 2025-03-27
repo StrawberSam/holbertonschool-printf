@@ -8,17 +8,17 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, total_char = 0;
-	va_list args;
+	va_list arguments;
 
 	if (format == NULL || format[i + 1] == '\0')
 		return (-1);
 
-	va_start(args, format);
+	va_start(arguments, format);
 
 	while (format != NULL && format[i] != '\0')
 	{
 		if (format[i] == '%')
-			i = find_specifier(format, ++i, args, &total_char);
+			i = find_specifier(format, ++i, arguments, &total_char);
 		else
 		{
 			_putchar(format[i]);
@@ -26,6 +26,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	va_end(args);
+	va_end(arguments);
 	return (total_char);
 }

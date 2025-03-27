@@ -20,7 +20,7 @@ typedef struct type_function
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int find_specifier(const char *format, int i, va_list args, int *total_char);
+int find_specifier(const char *format, int i, va_list arguments, int *total_char);
 
 int print_char(va_list arguments);
 int print_string(va_list arguments);

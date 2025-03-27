@@ -8,7 +8,8 @@
  * @total_char: pointeur vers le nombre total de caractères compté
  * Return: retourne Nouvel index après traitement
  */
-int find_specifier(const char *format, int i, va_list args, int *total_char)
+int find_specifier(const char *format, int i, va_list arguments,
+	int *total_char)
 {
 	int j;
 	type_function type[] = {
@@ -22,7 +23,7 @@ int find_specifier(const char *format, int i, va_list args, int *total_char)
 	{
 		if (format[i] == type[j].type_cifs)
 		{
-			*total_char += type[j].function_print(args);
+			*total_char += type[j].function_print(arguments);
 			return (i);
 		}
 	}
