@@ -58,7 +58,7 @@ int print_decimal(va_list arguments)
 {
 	int integer = va_arg(arguments, int);
 	int counter = 0;
-	int tab_numbers[12];
+	int tab_numbers[20];
 	int index = 0;
 	int i;
 
@@ -98,7 +98,7 @@ int print_int(va_list arguments)
 {
 	int integer = va_arg(arguments, int);
 	int counter = 0;
-	int tab_numbers[12];
+	int tab_numbers[20];
 	int index = 0;
 	int i;
 
