@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 /**
  * struct type_function - tableau de structure regroupant type et *fonction
