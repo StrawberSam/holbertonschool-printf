@@ -56,9 +56,9 @@ int print_percent(va_list arguments)
 
 int print_decimal(va_list arguments)
 {
-	int integer = va_arg(arguments, int);
+	long integer = va_arg(arguments, int);
 	int counter = 0;
-	int tab_numbers[10];
+	char tab_numbers[12];
 	int index = 0;
 	int i;
 
@@ -74,7 +74,7 @@ int print_decimal(va_list arguments)
 		integer = -integer;
 		counter++;
 	}
-
+	printf("nombre entier imprimé : %d\n", integer);
 	while (integer > 0)
 	{
 		tab_numbers[index++] = integer % 10;
@@ -98,7 +98,7 @@ int print_int(va_list arguments)
 {
 	int integer = va_arg(arguments, int);
 	int counter = 0;
-	int tab_numbers[10];
+	char tab_numbers[12];
 	int index = 0;
 	int i;
 
@@ -114,7 +114,7 @@ int print_int(va_list arguments)
 		integer = -integer;
 		counter++;
 	}
-
+	printf("nombre entier imprimé : %i\n", integer);
 	while (integer > 0)
 	{
 		tab_numbers[index++] = integer % 10;
