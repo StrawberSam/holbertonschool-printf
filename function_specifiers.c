@@ -62,6 +62,12 @@ int print_decimal(va_list arguments)
 	int index = 0;
 	int i;
 
+	if (integer == 0)
+	{
+		_putchar(0);
+		counter++;
+	}
+
 	if (integer < 0)
 	{
 		_putchar('-');
@@ -95,6 +101,12 @@ int print_int(va_list arguments)
 	int tab_numbers[12];
 	int index = 0;
 	int i;
+
+	if (integer == 0)
+	{
+		_putchar(0);
+		counter++;
+	}
 
 	if (integer < 0)
 	{
