@@ -64,7 +64,7 @@ int print_decimal(va_list arguments)
 
 	if (integer == 0)
 	{
-		_putchar(0);
+		_putchar('0');
 		counter++;
 	}
 
@@ -104,7 +104,7 @@ int print_int(va_list arguments)
 
 	if (integer == 0)
 	{
-		_putchar(0);
+		_putchar('0');
 		counter++;
 	}
 
