@@ -40,6 +40,11 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
-	_printf("%d", INT_MIN);
+	_printf("%d\n", INT_MIN);
+	_printf("%u\n", 1024);
+	_printf("%o\n", 1024);
+	_printf("%x\n", 1024);
+	_printf("%X\n", 1024);
+
 	return (0);
 }
