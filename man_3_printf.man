@@ -1,0 +1,125 @@
+.Dd 28/03/2025               \" DATE
+.Dt _printf man_3_printf      \" Program name and manual section number
+.Os Ubuntu
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm _printf
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.\" Use .Nm macro to designate other names for the documented program.
+.Nd Formatage de sortie.
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm int _printf
+.Ar (const char * format, ...)                 \" Underlined argument - use .Ar anywhere to underline
+.Pp
+
+.Ss PROTOTYPES
+
+Liste des prototypes utilisés pour les différents spécificateurs :
+
+
+int print_char(va_list arguments);
+
+int print_string(va_list arguments);
+
+int print_percent(va_list arguments);
+
+int print_decimal(va_list arguments);
+
+int print_binaire(va_list arguments);
+
+int print_unsigned(va_list arguments);
+
+int print_octal(va_list arguments);
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+La fonction
+.Nm
+produit des sorties en accord avec le
+.Ad format
+de chaque spécifieurs entrés. La fonction _printf écrit sa sortie sur
+.Ar stdout
+qui est la sortie standard.
+.Nm
+ne gère pas la mémoire tampons, les caractères
+d'identifications, la largueur du champ, la précision et les modificateurs de
+longueurs.
+.Pp
+
+.Ss VALEUR RENVOYEE
+
+En cas de succès, la fonction renvoit le nombre de carcatère affiché. Si une
+erreur de sortie est produite, une valeur négative est renvoyée.
+.Pp
+
+.Ss CHAÎNE DE FORMAT
+
+Les spécificateurs de conversion sont introduites par le caractère % et se
+termine par un indicateur de conversion.
+.Pp
+
+.Ss INDICATEUR DE CONVERSION
+.PP
+
+Un caractère indique le type de conversion à apporter. Les indicateurs de
+conversions et leur signification sont :
+.Pp
+
+- c : entier de type int qui est converti en char et renvoie 1.
+
+- s : argument de type
+.Ad const char *
+est un pointeur sur un tableau de caractère. Les caractères sont écrits jusqu'à
+l'octet nul.
+
+- % : Un caractère % est écrit. Il n'y a pas de conversion, l'indicateur complet est %%.
+
+- d, i : l'argument int est converti en un chiffre décimal signé. Ils sont identiques.
+
+- b : l'argument unsigned int est converti en binaire.
+
+- u : l'argument unsigned int est converti en chiffre strictement positif.
+
+- o : l'argument unsigned int transforme un nombre décimal en octal.
+
+.Pp                      \" Inserts a space
+.Pp
+.\" .Sh ENVIRONMENT      \" May not be needed
+.\" .Bl -tag -width "ENV_VAR_1" -indent \" ENV_VAR_1 is width of the string ENV_VAR_1
+.\" .It Ev ENV_VAR_1
+.\" Description of ENV_VAR_1
+.\" .It Ev ENV_VAR_2
+.\" Description of ENV_VAR_2
+.\" .El
+.Sh CONFORMITE                \" File used or created by the topic of the man page
+La fonction
+.Nm
+est conforme à la norme C89.
+.Sh EXEMPLES               \" File used or created by the topic of the man page
+Print une chaîne de caractère.
+
+_printf("The function printf is not easy. Timi & Sam.\\n");
+
+Print une chaîne de caractère avec un spécifieur.
+
+_printf("%s\\n", "But we get it, we are the champions of the code!");
+
+Print a character
+
+_printf("I am a character %c\\n", c);
+
+Print a number
+
+_printf("%d, %d\\n", 3, 5);
+
+.El                      \" Ends the list
+.\" .Sh DIAGNOSTICS       \" May not be needed
+.\" .Bl -diag
+.\" .It Diagnostic Tag
+.\" Diagnostic informtion here.
+.\" .It Diagnostic Tag
+.\" Diagnostic informtion here.
+.\" .El
+.Sh AUTEURS
+Thérèse-Marie Lefoulon & Samira Roche #C26 Laval
+
+.\" .Sh BUGS              \" Document known, unremedied bugs
+.\" .Sh HISTORY           \" Document history if command behaves in a unique manner

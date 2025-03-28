@@ -21,12 +21,15 @@ typedef struct type_function
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int find_specifier(const char *format, int i, va_list arguments, int *total_char);
+int find_specifier(const char *format, int i, va_list arguments,
+	int *total_char);
 
 int print_char(va_list arguments);
 int print_string(va_list arguments);
 int print_percent(va_list arguments);
 int print_decimal(va_list arguments);
-int print_int(va_list arguments);
+int print_binaire(va_list arguments);
+int print_unsigned(va_list arguments);
+int print_octal(va_list arguments);
 
 #endif /* MAIN_H */
